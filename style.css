@@ -1,0 +1,32 @@
+.card {
+  border-width: 4px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.locked {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  background-color: #d1fae5 !important;
+}
+.general {
+  border-color: #a855f7;
+  background-color: #f4e9ff;
+}
+.basica {
+  border-color: #22c55e;
+  background-color: #e2f7e1;
+}
+.profesional {
+  border-color: #fb923c;
+  background-color: #ffeed9;
+}
