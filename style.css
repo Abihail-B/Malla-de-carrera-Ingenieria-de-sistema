@@ -1,23 +1,68 @@
-.card {
-  border-width: 4px;
+body {
+  background: linear-gradient(
+    to right,
+    rgb(82, 62, 39) 0%,
+    rgb(82, 62, 39) 16.6667%,
+    rgb(168, 112, 8) 16.6667%,
+    rgb(168, 112, 8) 33.3333%,
+    rgb(206, 104, 87) 33.3333%,
+    rgb(206, 104, 87) 50%,
+    rgb(214, 119, 71) 50%,
+    rgb(214, 119, 71) 66.6667%,
+    rgb(242, 189, 153) 66.6667%,
+    rgb(242, 189, 153) 83.3333%,
+    rgb(232, 207, 193) 83.3333%,
+    rgb(232, 207, 193) 100%
+  );
+  font-family: sans-serif;
+  margin: 0;
   padding: 1rem;
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
-.card:hover {
+
+header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+main#malla-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 90vh;
+  overflow-x: auto;
+}
+
+.columna {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.columna h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.materia {
+  border: 3px solid gray;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.materia:hover {
   transform: scale(1.03);
 }
-.locked {
-  opacity: 0.4;
-  pointer-events: none;
-}
-.completed {
-  text-decoration: line-through;
-  background-color: #d1fae5 !important;
-}
+
 .general {
   border-color: #a855f7;
   background-color: #f4e9ff;
@@ -29,4 +74,36 @@
 .profesional {
   border-color: #fb923c;
   background-color: #ffeed9;
+}
+
+.bloqueada {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.aprobada {
+  text-decoration: line-through;
+  background-color: #d1fae5 !important;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+}
+footer .leyenda span {
+  margin-right: 1rem;
+  display: inline-block;
+}
+button#reiniciar {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+button#reiniciar:hover {
+  background-color: #991b1b;
+}
 }
