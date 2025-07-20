@@ -1,37 +1,53 @@
-const materias = {
-  'UNI102': { nombre: 'Matemáticas I', tipo: 'basica', requisitos: [], desbloquea: ['SIS107', 'UNI108'] },
-  'SIS101': { nombre: 'Intro a Ingeniería de Sistemas', tipo: 'profesional', requisitos: [], desbloquea: ['SIS141'] },
-  'SIS103': { nombre: 'Intro a la Programación', tipo: 'basica', requisitos: [], desbloquea: ['SIS109', 'SIS117'] },
-  'UNI104': { nombre: 'Competencias Digitales', tipo: 'general', requisitos: [], desbloquea: ['SIS110'] },
-  'UNI105': { nombre: 'Redacción Técnica', tipo: 'general', requisitos: [], desbloquea: [] },
-  'UNI106': { nombre: 'Inglés I', tipo: 'general', requisitos: [], desbloquea: ['UNI112'] },
-  'SIS107': { nombre: 'Estadística Aplicada', tipo: 'basica', requisitos: ['UNI102'], desbloquea: ['SIS113'] },
-  'UNI108': { nombre: 'Matemáticas II', tipo: 'basica', requisitos: ['UNI102'], desbloquea: ['SIS114'] },
-  // Aquí irían todas las demás materias...
-};
-
 const estados = JSON.parse(localStorage.getItem('materias_aprobadas') || '{}');
-const grid = document.getElementById('grid');
+const contenedor = document.getElementById('malla-container');
 
 function puedeDesbloquear(id) {
-  return materias[id].requisitos.every(req => estados[req]);
+  const materia = materias[id];
+  return materia.requisitos.length === 0 || materia.requisitos.every(req => estados[req]);
+}
+
+function crearColumnaSemestre(numero) {
+  const columna = document.createElement('div');
+  columna.className = 'columna';
+  const titulo = document.createElement('h3');
+  titulo.textContent = `Semestre ${numero}`;
+  columna.appendChild(titulo);
+  return columna;
 }
 
 function render() {
-  grid.innerHTML = '';
+  contenedor.innerHTML = '';
+
+  // Agrupar materias por semestre
+  const porSemestre = {};
   for (const id in materias) {
-    const m = materias[id];
-    const aprobado = estados[id];
-    const desbloqueado = aprobado || puedeDesbloquear(id);
-    const div = document.createElement('div');
-    div.className = `card ${m.tipo} ${desbloqueado ? '' : 'locked'} ${aprobado ? 'completed' : ''}`;
-    div.innerText = m.nombre;
-    div.onclick = () => {
-      estados[id] = !estados[id];
-      localStorage.setItem('materias_aprobadas', JSON.stringify(estados));
-      render();
-    };
-    grid.appendChild(div);
+    const mat = materias[id];
+    if (!porSemestre[mat.semestre]) porSemestre[mat.semestre] = [];
+    porSemestre[mat.semestre].push({ ...mat, id });
+  }
+
+  // Crear columnas del semestre 1 al 10
+  for (let s = 1; s <= 10; s++) {
+    const columna = crearColumnaSemestre(s);
+    const materiasDelSemestre = porSemestre[s] || [];
+
+    materiasDelSemestre.forEach(m => {
+      const div = document.createElement('div');
+      const aprobada = estados[m.id];
+      const desbloqueada = puedeDesbloquear(m.id) || aprobada;
+      div.className = `materia ${m.tipo} ${aprobada ? 'aprobada' : ''} ${desbloqueada ? '' : 'bloqueada'}`;
+      div.textContent = m.nombre;
+      div.title = desbloqueada ? '' : `Requiere: ${m.requisitos.map(r => materias[r]?.nombre || r).join(', ')}`;
+      div.onclick = () => {
+        if (!puedeDesbloquear(m.id)) return;
+        estados[m.id] = !estados[m.id];
+        localStorage.setItem('materias_aprobadas', JSON.stringify(estados));
+        render();
+      };
+      columna.appendChild(div);
+    });
+
+    contenedor.appendChild(columna);
   }
 }
 
@@ -39,5 +55,7 @@ function resetProgress() {
   localStorage.removeItem('materias_aprobadas');
   render();
 }
+
+document.getElementById('reiniciar').addEventListener('click', resetProgress);
 
 render();
