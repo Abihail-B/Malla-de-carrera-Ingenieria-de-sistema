@@ -1,30 +1,17 @@
 body {
-  background: linear-gradient(
-    to right,
-    rgb(82, 62, 39) 0%,
-    rgb(82, 62, 39) 16.6667%,
-    rgb(168, 112, 8) 16.6667%,
-    rgb(168, 112, 8) 33.3333%,
-    rgb(206, 104, 87) 33.3333%,
-    rgb(206, 104, 87) 50%,
-    rgb(214, 119, 71) 50%,
-    rgb(214, 119, 71) 66.6667%,
-    rgb(242, 189, 153) 66.6667%,
-    rgb(242, 189, 153) 83.3333%,
-    rgb(232, 207, 193) 83.3333%,
-    rgb(232, 207, 193) 100%
-  );
-  font-family: sans-serif;
+  background-color: #484151;
+  font-family: 'sans-serif';
   margin: 0;
   padding: 1rem;
 }
-
 header {
   text-align: center;
   color: #fff;
   margin-bottom: 1rem;
 }
-
+header h1 {
+  font-family: 'RoxboroughCF', serif;
+}
 main#malla-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -35,16 +22,26 @@ main#malla-container {
 }
 
 .columna {
-  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0.75rem;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-
+.columna:nth-child(1) { background-color: #893d39; }
+.columna:nth-child(2) { background-color: #834827; }
+.columna:nth-child(3) { background-color: #ce6857; }
+.columna:nth-child(4) { background-color: #a87008; }
+.columna:nth-child(5) { background-color: #f2bd99; }
+.columna:nth-child(6) { background-color: #d67747; }
+.columna:nth-child(7) { background-color: #893d39; }
+.columna:nth-child(8) { background-color: #834827; }
+.columna:nth-child(9) { background-color: #ce6857; }
+.columna:nth-child(10) { background-color: #a87008; 
+}
 .columna h3 {
   text-align: center;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  font-family: 'Sorts Mill Goudy', serif;
 }
 
 .materia {
@@ -82,7 +79,7 @@ main#malla-container {
 }
 .aprobada {
   text-decoration: line-through;
-  background-color: #d1fae5 !important;
+  background-color: #317254 !important;
 }
 
 footer {
@@ -105,5 +102,4 @@ button#reiniciar {
 }
 button#reiniciar:hover {
   background-color: #991b1b;
-}
 }
