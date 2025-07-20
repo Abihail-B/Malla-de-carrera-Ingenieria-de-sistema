@@ -63,8 +63,8 @@ const materias = {
   // Optativas I y II
   'SIS1O1': { nombre: 'Inteligencia Artificial II', tipo: 'profesional', semestre: 9, requisitos: ['SIS138', 'SIS144'] },
   'SIS1O2': { nombre: 'Seguridad de la Información', tipo: 'profesional', semestre: 9, requisitos: ['SIS138', 'SIS144'] },
-  'SIS103': { nombre: 'Planeación Estratégica', tipo: 'profesional', semestre: 9, requisitos: ['SIS143'] },
-  'SIS104': { nombre: 'Gerencia Empresarial', tipo: 'profesional', semestre: 9, requisitos: ['SIS143'] },
+  'SIS1O3': { nombre: 'Planeación Estratégica', tipo: 'profesional', semestre: 9, requisitos: ['SIS143'] },
+  'SIS1O4': { nombre: 'Gerencia Empresarial', tipo: 'profesional', semestre: 9, requisitos: ['SIS143'] },
 //decimo semestre
   'SIS154': { nombre: 'Finalización de la Forma de Culminación de Estudios', tipo: 'profesional', semestre: 10, requisitos: ['SIS152', 'SIS149', 'SIS151', 'SIS153', 'SIS152'] }
 };
