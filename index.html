@@ -4,17 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Malla Curricular Interactiva</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gradient-to-r from-[#52272f] via-[#a87008] to-[#e8cfc1] min-h-screen p-6">
-  <div class="max-w-7xl mx-auto">
-    <h1 class="text-3xl font-bold text-center mb-8 text-white drop-shadow">Malla Curricular Interactiva - Ingeniería de Sistemas</h1>
-    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
-    <div class="text-center mt-10">
-      <button onclick="resetProgress()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Reiniciar progreso</button>
+<body>
+  <header>
+    <h1>Malla Curricular - Ingeniería de Sistemas</h1>
+    <p>Clic en una materia para marcarla como aprobada. Las siguientes materias se desbloquearán si se cumplen los requisitos.</p>
+  </header>
+
+  <main id="malla-container">
+    <!-- Aquí se insertan las columnas por semestre -->
+  </main>
+
+  <footer>
+    <button id="reiniciar">🔄 Reiniciar progreso</button>
+    <div class="leyenda">
+      <span class="leyenda-general">🟪 General</span>
+      <span class="leyenda-basica">🟩 Básica</span>
+      <span class="leyenda-profesional">🟧 Profesionalizante</span>
     </div>
-  </div>
+  </footer>
+
+  <script src="materias.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
