@@ -14,11 +14,3 @@ Este proyecto permite visualizar e interactuar con la malla de la carrera Ingeni
 3. Observa cómo se desbloquean las siguientes.
 4. Usa el botón para reiniciar tu progreso.
 
-## Publicar en GitHub Pages
-1. Crea un repositorio en GitHub y sube estos archivos.
-2. Ve a `Settings > Pages` y selecciona la rama `main` y carpeta `/ (root)`.
-3. Tu malla estará disponible en `https://tuusuario.github.io/tu-repo`.
-
----
-
-Hecho con ❤️ para tu avance académico.
