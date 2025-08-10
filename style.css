@@ -26,16 +26,16 @@ main#malla-container {
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-.columna:nth-child(1)  { background-color: #FFF8F0; }
+.columna:nth-child(1)  { background-color: #9C6C6C; }
 .columna:nth-child(2)  { background-color: #D6A77A; }
 .columna:nth-child(3)  { background-color: #B37C53; }
 .columna:nth-child(4)  { background-color: #A0663B; }
 .columna:nth-child(5)  { background-color: #CC9966; }
 .columna:nth-child(6)  { background-color: #C2A383; }
 .columna:nth-child(7)  { background-color: #E6CBB3; }
-.columna:nth-child(8)  { background-color: #F1DED0; }
-.columna:nth-child(9)  { background-color: #FFF1E6; }
-.columna:nth-child(10) { background-color: #FAF7F2; }
+.columna:nth-child(8)  { background-color: #a58c7f; }
+.columna:nth-child(9)  { background-color: #867165; }
+.columna:nth-child(10) { background-color: #A27B5F;
 }
 .columna h3 {
   text-align: center;
