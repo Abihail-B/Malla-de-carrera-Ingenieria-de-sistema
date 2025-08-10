@@ -14,7 +14,7 @@ header h1 {
 }
 main#malla-container {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 250px);
   gap: 1rem;
   padding: 1rem;
   min-height: 90vh;
