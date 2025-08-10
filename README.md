@@ -1,12 +1,15 @@
 # Malla Curricular Interactiva - Ingeniería de Sistemas
 
-Este proyecto permite visualizar e interactuar con la malla de la carrera Ingeniería de Sistemas en forma de árbol de desbloqueo.
+Este proyecto permite visualizar e interactuar con la malla de la carrera Ingeniería de Sistemas la cual es la 
+2025 de la universidad
 
 ## Funcionalidades
 - Click en una materia: la marca como aprobada.
 - Se desbloquean materias automáticamente si se cumplen sus prerrequisitos.
+- Algunas materias no requieren requisitos previos. 
 - Estado guardado localmente (persistente).
 - Botón para reiniciar avance.
+- Las materias tienen 3 categorias Basica, General y profezionalizantes. 
 
 ## Instrucciones
 1. Abre `index.html` en tu navegador.
